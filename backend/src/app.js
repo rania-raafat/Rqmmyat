@@ -8,6 +8,7 @@ import clientRoutes from "./routes/clientRoutes.js";
 import contactRoutes from "./routes/contactRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
+import uploadRoutes from "./routes/uploadRoutes.js";
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use("/api/clients", clientRoutes);
 app.use("/api/contacts", contactRoutes);
 app.use("/api/auth",authRoutes);
 app.use("/api/dashboard",dashboardRoutes);
+app.use("/api/upload" , uploadRoutes);
 
 // Home Route
 app.get("/", (req, res) => {
