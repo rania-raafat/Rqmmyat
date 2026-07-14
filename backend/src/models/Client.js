@@ -4,8 +4,6 @@ const clientSchema = new mongoose.Schema(
   {
     name: String,
 
-    industry: String,
-
     logo: String,
 
     featured: {
