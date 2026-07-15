@@ -1,0 +1,117 @@
+<div class="services-page mt-2">
+
+  <div class="page-header">
+
+    <h2>Services</h2>
+
+    <button class="add-btn" routerLink="/dashboard/services/add">
+      <i class="fa-solid fa-plus"></i>
+      Add Service
+    </button>
+
+  </div>
+
+  <div *ngIf="loading" class="loading">
+
+    Loading...
+
+  </div>
+
+  <div *ngIf="!loading" class="table-wrapper">
+
+    <table>
+
+      <thead>
+
+        <tr>
+
+          <th>Image</th>
+
+          <th>Title</th>
+
+          <th>Slug</th>
+
+          <th>Actions</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let service of services">
+
+          <td>
+
+            <img [src]="service.image" [alt]="service.title">
+
+          </td>
+
+          <td>{{ service.title }}</td>
+
+          <td>{{ service.slug }}</td>
+
+          <td>
+
+            <button class="edit-btn" [routerLink]="[
+            '/dashboard/services/edit',
+            service._id
+            ]">
+              Edit
+            </button>
+
+            <button *ngIf="isAdmin" class="delete-btn" (click)="openDeleteModal(service._id!)">
+
+              Delete
+
+            </button>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<!-- Delete Modal -->
+
+<div class="modal-overlay" *ngIf="showDeleteModal">
+
+  <div class="delete-modal">
+
+    <div class="modal-icon">
+
+      <i class="fa-solid fa-trash"></i>
+
+    </div>
+
+    <h3>Delete Service?</h3>
+
+    <p>
+      This action cannot be undone.
+    </p>
+
+    <div class="modal-actions">
+
+      <button class="cancel-btn" (click)="closeDeleteModal()">
+
+        Cancel
+
+      </button>
+
+      <button class="confirm-btn" (click)="confirmDelete()">
+
+        Delete
+
+      </button>
+
+    </div>
+
+  </div>
+
+</div>

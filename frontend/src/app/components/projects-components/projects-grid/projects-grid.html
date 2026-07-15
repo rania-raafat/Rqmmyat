@@ -1,0 +1,104 @@
+<section class="projects-page">
+  <div class="container px-5 sm:px-6 lg:px-12">
+    <!-- HEADER -->
+
+    <div class="header">
+      <span class="tag"> OUR PROJECTS </span>
+
+      <h1>Our Technology Solutions</h1>
+
+      <p>
+        Explore our completed projects, innovative systems and digital solutions delivered for
+        different industries.
+      </p>
+    </div>
+
+    <!-- FILTER -->
+
+    <div class="filters">
+      <button
+        *ngFor="let category of categories"
+        (click)="selectCategory(category)"
+        [class.active]="selectedCategory === category"
+      >
+        {{ category }}
+      </button>
+    </div>
+
+    <!-- PROJECTS -->
+
+    <div class="projects-grid">
+      <div class="project-card" *ngFor="let project of paginatedProjects">
+        <!-- IMAGE -->
+
+        <div class="image">
+          <img [src]="project.image" [alt]="project.title" />
+
+          <div *ngIf="project.featured" class="badge">Featured</div>
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="content">
+          <span class="category">
+            {{ project.category }}
+          </span>
+
+          <h2>
+            {{ project.title }}
+          </h2>
+
+          <p class="description">
+            {{ project.shortDescription }}
+          </p>
+
+          <div class="project-info">
+            <div>
+              <span> Category </span>
+
+              <strong>
+                {{ project.category }}
+              </strong>
+            </div>
+
+            <div>
+              <span> Status </span>
+
+              <strong>
+                {{ project.status }}
+              </strong>
+            </div>
+          </div>
+
+          <div class="project-footer">
+            <span *ngIf="project.featured"> ★ Featured Project </span>
+
+            <span *ngIf="!project.featured"> ✓ Completed Solution </span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGINATION -->
+
+    <div class="pagination" *ngIf="totalPages > 1">
+      <button
+        *ngFor="let page of pages"
+        (click)="changePage(page)"
+        [class.active]="currentPage === page"
+      >
+        {{ page }}
+      </button>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto">
+  <div class="relative">
+    <div class="h-px bg-[#163523]"></div>
+
+    <div
+      class="absolute left-1/2 -translate-x-1/2 -top-1 w-3 h-3 rounded-full bg-[#00ff66] shadow-[0_0_15px_#00ff66]"
+    ></div>
+  </div>
+</div>

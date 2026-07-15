@@ -1,0 +1,86 @@
+<div
+  class="sidebar"
+  [class.mobile-open]="sidebarOpen">
+
+  <div
+    class="close-btn"
+    (click)="closeSidebar.emit()">
+
+    <i class="fa-solid fa-xmark"></i>
+
+  </div>
+
+  <div class="logo">
+
+    <h2>RQMMYAT</h2>
+
+    <span>Admin Panel</span>
+
+  </div>
+
+  <nav>
+
+    <a
+      routerLink="/dashboard"
+      [routerLinkActiveOptions]="{ exact: true }"
+      routerLinkActive="active">
+
+      <i class="fa-solid fa-chart-line"></i>
+
+      Dashboard
+
+    </a>
+
+    <a
+      routerLink="/dashboard/services"
+      routerLinkActive="active">
+
+      <i class="fa-solid fa-briefcase"></i>
+
+      Services
+
+    </a>
+
+    <a
+      routerLink="/dashboard/projects"
+      routerLinkActive="active">
+
+      <i class="fa-solid fa-diagram-project"></i>
+
+      Projects
+
+    </a>
+
+    <a
+      routerLink="/dashboard/team"
+      routerLinkActive="active">
+
+      <i class="fa-solid fa-users"></i>
+
+      Team
+
+    </a>
+
+    <a
+      routerLink="/dashboard/clients"
+      routerLinkActive="active">
+
+      <i class="fa-solid fa-building"></i>
+
+      Clients
+
+    </a>
+
+    <a
+      routerLink="/dashboard/contacts"
+      routerLinkActive="active">
+
+      <i class="fa-solid fa-envelope"></i>
+
+      Contacts
+
+    </a>
+
+  </nav>
+
+</div>

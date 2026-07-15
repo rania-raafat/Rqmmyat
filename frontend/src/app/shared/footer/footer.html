@@ -1,0 +1,127 @@
+<footer class="bg-[#131314] text-white rounded-t-[40px] overflow-hidden">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12 py-12 lg:py-16">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
+      <!-- Company Info -->
+      <div>
+        <a routerLink="/" class="flex items-center gap-3 mb-6 w-fit">
+          <img src="images/logo.png" alt="RQMMYAT" class="w-12 h-12 sm:w-14 sm:h-14" />
+
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">RQMMYAT</h2>
+        </a>
+
+        <p class="text-gray-400 leading-7 max-w-lg">
+          RQMMYAT provides RFID Solutions, Software Development, Automation Systems, Digital
+          Transformation, Network Infrastructure and Light Current Solutions.
+        </p>
+
+        <!-- Social Links -->
+        <div class="flex flex-wrap gap-5 mt-8">
+          <a
+            href="https://www.facebook.com/share/1EeDmoUdUm/?mibextid=wwXIfr"
+            target="_blank"
+            class="text-gray-400 hover:text-[#00ff66] transition duration-300"
+          >
+            Facebook
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/rqmmyat-iot/"
+            target="_blank"
+            class="text-gray-400 hover:text-[#00ff66] transition duration-300"
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://www.instagram.com/rqmmyat?igsh=NW5qeGp2c2FmMDVo"
+            target="_blank"
+            class="text-gray-400 hover:text-[#00ff66] transition duration-300"
+          >
+            Instagram
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
+        <!-- Quick Links -->
+        <div>
+          <h3 class="text-white font-semibold mb-5">Quick Links</h3>
+
+          <ul class="space-y-3 text-gray-400">
+            <li>
+              <a routerLink="/" class="hover:text-[#00ff66] transition duration-300"> Home </a>
+            </li>
+
+            <li>
+              <a routerLink="/about" class="hover:text-[#00ff66] transition duration-300">
+                About
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/services" class="hover:text-[#00ff66] transition duration-300">
+                Services
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/projects" class="hover:text-[#00ff66] transition duration-300">
+                Projects
+              </a>
+            </li>
+
+            <li>
+              <a routerLink="/contact" class="hover:text-[#00ff66] transition duration-300">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Services -->
+        <div>
+          <h3 class="text-white font-semibold mb-5">Services</h3>
+
+          <ul class="space-y-3 text-gray-400">
+            <li *ngFor="let service of services">
+              <a
+                [routerLink]="['/services']"
+                [fragment]="service.slug"
+                class="hover:text-[#00ff66] transition duration-300"
+              >
+                {{ service.title }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="border-t border-gray-800 mt-12 pt-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-gray-500 text-sm text-center md:text-left">
+          © 2026 RQMMYAT. All Rights Reserved.
+        </p>
+
+        <p class="text-gray-500 text-sm text-center md:text-right">
+          RFID • Software • Automation • Digital Transformation
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Background Glow & Text -->
+  <div class="relative overflow-hidden pointer-events-none">
+    <div
+      class="absolute inset-x-0 bottom-0 mx-auto w-full max-w-2xl h-32 sm:h-40 bg-[#00ff66] rounded-full blur-[160px] opacity-20"
+    ></div>
+
+    <h1
+      class="text-center font-extrabold leading-none text-transparent text-[clamp(3rem,12vw,10rem)] [-webkit-text-stroke:1px_#0D542B] select-none"
+    >
+      RQMMYAT
+    </h1>
+  </div>
+</footer>

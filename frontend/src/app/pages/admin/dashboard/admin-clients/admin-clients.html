@@ -1,0 +1,77 @@
+<div class="projects-page mt-2">
+  <div class="page-header">
+    <h2>Clients</h2>
+
+    <button class="add-btn" routerLink="/dashboard/clients/add">
+      <i class="fa-solid fa-plus"></i>
+
+      Add Client
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <div *ngIf="!loading" class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Logo</th>
+
+          <th>Name</th>
+
+          <th>Featured</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let client of clients">
+          <td>
+            <img [src]="client.logo" [alt]="client.name" />
+          </td>
+
+          <td>
+            {{ client.name }}
+          </td>
+
+          <td>
+            <span *ngIf="client.featured" class="featured-badge"> Featured </span>
+
+            <span *ngIf="!client.featured" class="not-featured-badge"> No </span>
+          </td>
+
+          <td>
+            <button class="edit-btn" [routerLink]="['/dashboard/clients/edit', client._id]">
+              Edit
+            </button>
+
+            <button *ngIf="isAdmin" class="delete-btn" (click)="openDeleteModal(client._id!)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+
+<div class="modal-overlay" *ngIf="showDeleteModal">
+  <div class="delete-modal">
+    <div class="modal-icon">
+      <i class="fa-solid fa-trash"></i>
+    </div>
+
+    <h3>Delete Client?</h3>
+
+    <p>This action cannot be undone.</p>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" (click)="closeDeleteModal()">Cancel</button>
+
+      <button class="confirm-btn" (click)="confirmDelete()">Delete</button>
+    </div>
+  </div>
+</div>

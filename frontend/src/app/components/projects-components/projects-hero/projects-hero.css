@@ -1,0 +1,13 @@
+.hero-bg {
+  animation: heroZoom 9s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}

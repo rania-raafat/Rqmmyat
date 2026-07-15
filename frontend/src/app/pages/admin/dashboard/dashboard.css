@@ -1,0 +1,35 @@
+.dashboard-container{
+  display:flex;
+  min-height:100vh;
+  background:#07130d;
+}
+
+.content{
+  flex:1;
+  min-width: 0;
+  padding:30px;
+}
+
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  z-index:998;
+}
+
+@media(min-width:993px){
+
+  .overlay{
+    display:none;
+  }
+
+}
+
+@media(max-width:992px){
+
+  .content{
+    width:100%;
+    padding:20px;
+  }
+
+}

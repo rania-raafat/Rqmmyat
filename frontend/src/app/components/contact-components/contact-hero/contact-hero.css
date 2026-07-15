@@ -1,0 +1,83 @@
+.contact-hero {
+    min-height: 45vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 80px;
+
+    background:
+        linear-gradient(rgba(7, 17, 11, .88),
+            rgba(7, 17, 11, .92)),
+        url('../../../../../public/images/contact-hero.jpeg') center/cover;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-badge {
+    display: inline-block;
+
+    background: rgba(0, 255, 102, .12);
+
+    color: #00ff66;
+
+    padding: 10px 18px;
+
+    border-radius: 999px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 {
+    color: white;
+
+    font-size: 56px;
+
+    font-weight: 800;
+
+    line-height: 1.15;
+
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #00ff66;
+}
+
+.hero-content p {
+    color: #d1d5db;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-width: 650px;
+
+    margin: auto;
+}
+
+@media (max-width: 768px) {
+
+    .contact-hero {
+        min-height: 35vh;
+        padding: 100px 15px 60px;
+    }
+
+    .hero-content h1 {
+        font-size: 36px;
+    }
+
+    .hero-content p {
+        font-size: 15px;
+    }
+
+}

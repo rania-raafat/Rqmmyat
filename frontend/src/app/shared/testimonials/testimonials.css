@@ -1,0 +1,33 @@
+swiper-container {
+  padding-bottom: 25px;
+}
+
+/* Pagination */
+
+swiper-container::part(pagination) {
+  margin-top: 35px;
+
+  position: relative;
+}
+
+swiper-container::part(bullet) {
+  width: 10px;
+
+  height: 10px;
+
+  background: #9ca3af;
+
+  opacity: 0.5;
+}
+
+swiper-container::part(bullet-active) {
+  background: #00ff66;
+
+  opacity: 1;
+}
+
+/* Card Hover */
+
+.testimonial-card:hover {
+  border-color: #00ff66;
+}

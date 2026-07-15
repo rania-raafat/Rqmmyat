@@ -1,0 +1,109 @@
+.dashboard-home{
+  margin-top:30px;
+}
+
+.page-header{
+  margin-bottom:30px;
+}
+
+.page-header h2{
+  color:white;
+  font-size:28px;
+  margin-bottom:5px;
+}
+
+.page-header p{
+  color:#9ca3af;
+}
+
+.loading{
+  color:white;
+}
+
+.stats-grid{
+
+  display:grid;
+
+  grid-template-columns:
+  repeat(auto-fit,minmax(220px,1fr));
+
+  gap:20px;
+}
+
+.stat-card{
+
+  background:#0c1d14;
+
+  border:1px solid #163523;
+
+  border-radius:20px;
+
+  padding:25px;
+
+  transition:.3s;
+}
+
+.stat-card:hover{
+
+  transform:translateY(-4px);
+
+  border-color:#00ff66;
+}
+
+.icon{
+
+  width:55px;
+  height:55px;
+
+  border-radius:14px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  margin-bottom:20px;
+
+  font-size:22px;
+}
+
+.services{
+  background:#143e28;
+  color:#00ff66;
+}
+
+.projects{
+  background:#1f3a52;
+  color:#60a5fa;
+}
+
+.clients{
+  background:#4a3415;
+  color:#fbbf24;
+}
+
+.contacts{
+  background:#4a1626;
+  color:#fb7185;
+}
+
+.team{
+  background:#3d2352;
+  color:#c084fc;
+}
+
+.stat-card h3{
+
+  color:#9ca3af;
+
+  margin-bottom:10px;
+}
+
+.stat-card span{
+
+  color:white;
+
+  font-size:34px;
+
+  font-weight:700;
+}

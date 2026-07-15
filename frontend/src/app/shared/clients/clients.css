@@ -1,0 +1,44 @@
+swiper-container {
+  padding: 50px 0;
+}
+
+.logo-wrapper {
+  height: 160px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.client-logo {
+  width: 100%;
+  max-width: 240px;
+  height: 120px;
+
+  object-fit: contain;
+
+  opacity: 0.7;
+
+  filter: grayscale(100%);
+
+  transition: all 0.3s ease;
+}
+
+.client-logo:hover {
+  opacity: 1;
+
+  filter: grayscale(0%);
+}
+
+@media (max-width: 768px) {
+
+  .logo-wrapper {
+    height: 120px;
+  }
+
+  .client-logo {
+    max-width: 180px;
+    height: 90px;
+  }
+
+}

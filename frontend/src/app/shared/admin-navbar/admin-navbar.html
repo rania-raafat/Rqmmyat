@@ -1,0 +1,40 @@
+<div class="topbar">
+
+  <div class="left">
+
+    <button
+      class="menu-btn"
+      (click)="toggleSidebar.emit()">
+
+      <i class="fa-solid fa-bars"></i>
+
+    </button>
+
+    <div>
+
+      <h1>Dashboard</h1>
+
+      <span>
+
+        Welcome back,
+        {{ adminName }}
+
+      </span>
+
+    </div>
+
+  </div>
+
+  <button
+    class="logout-btn"
+    (click)="logout()">
+
+    <i
+      class="fa-solid fa-right-from-bracket">
+    </i>
+
+    <span>Logout</span>
+
+  </button>
+
+</div>

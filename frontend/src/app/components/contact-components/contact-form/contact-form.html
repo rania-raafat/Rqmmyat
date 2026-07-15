@@ -1,0 +1,208 @@
+<section class="contact-section">
+
+  <div class="contact-container">
+
+    <div class="contact-header">
+
+      <h2>Contact Us</h2>
+
+      <p>
+        Tell us about your project and we'll get back to you shortly.
+      </p>
+
+    </div>
+
+    <form
+      class="contact-form"
+      [formGroup]="contactForm"
+    >
+
+      <!-- NAME + EMAIL -->
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Name *</label>
+
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Your name"
+          />
+
+          <small
+            class="error"
+            *ngIf="name?.touched && name?.errors?.['required']"
+          >
+            Name is required
+          </small>
+
+          <small
+            class="error"
+            *ngIf="name?.touched && name?.errors?.['minlength']"
+          >
+            Name must be at least 3 characters
+          </small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Email *</label>
+
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="you@example.com"
+          />
+
+          <small
+            class="error"
+            *ngIf="email?.touched && email?.errors?.['required']"
+          >
+            Email is required
+          </small>
+
+          <small
+            class="error"
+            *ngIf="email?.touched && email?.errors?.['email']"
+          >
+            Please enter a valid email
+          </small>
+
+        </div>
+
+      </div>
+
+      <!-- PHONE + COMPANY -->
+
+      <div class="form-row">
+
+        <div class="form-group">
+
+          <label>Phone *</label>
+
+          <input type="text" formControlName="phone" placeholder="+20 xx xxx xxxx" />
+
+          <small
+            class="error"
+            *ngIf="phone?.touched && phone?.errors?.['required']"
+          >
+            Phone number is required
+          </small>
+
+          <small
+            class="error"
+            *ngIf="phone?.touched && phone?.errors?.['pattern']"
+          >
+            Phone number must be 11 digits
+          </small>
+
+        </div>
+
+        <div class="form-group">
+
+          <label>Company</label>
+
+          <input
+            type="text"
+            formControlName="company"
+            placeholder="Company name"
+          />
+
+          <small
+            class="error"
+            *ngIf="company?.touched && company?.errors?.['minlength']"
+          >
+            Company name must be at least 2 characters
+          </small>
+
+        </div>
+
+      </div>
+
+      <!-- SERVICE -->
+
+      <div class="form-group">
+
+        <label>Service *</label>
+
+        <select formControlName="service">
+
+          <option value="">
+            Select Service
+          </option>
+
+          <option
+            *ngFor="let service of services"
+            [value]="service.title"
+          >
+            {{ service.title }}
+          </option>
+
+        </select>
+
+        <small
+          class="error"
+          *ngIf="service?.touched && service?.errors?.['required']"
+        >
+          Please select a service
+        </small>
+
+      </div>
+
+      <!-- MESSAGE -->
+
+      <div class="form-group">
+
+        <label>Message *</label>
+
+        <textarea
+          rows="6"
+          formControlName="message"
+          placeholder="Tell us about your project..."
+        >
+        </textarea>
+
+        <small
+          class="error"
+          *ngIf="message?.touched && message?.errors?.['required']"
+        >
+          Message is required
+        </small>
+
+        <small
+          class="error"
+          *ngIf="message?.touched && message?.errors?.['minlength']"
+        >
+          Message must be at least 10 characters
+        </small>
+
+        <small
+          class="error"
+          *ngIf="message?.touched && message?.errors?.['maxlength']"
+        >
+          Message cannot exceed 1000 characters
+        </small>
+
+      </div>
+
+      <!-- BUTTON -->
+
+      <button
+        type="button"
+        class="submit-btn"
+        [disabled]="loading"
+        (click)="sendMessage()"
+      >
+
+        {{ loading ? 'Sending...' : 'Send Message' }}
+
+      </button>
+
+    </form>
+
+  </div>
+
+</section>

@@ -1,0 +1,81 @@
+<div class="team-page mt-2">
+  <div class="page-header">
+    <h2>Team</h2>
+
+    <button class="add-btn" routerLink="/dashboard/team/add">
+      <i class="fa-solid fa-plus"></i>
+
+      Add Team Member
+    </button>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <div *ngIf="!loading" class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Image</th>
+
+          <th>Name</th>
+
+          <th>Position</th>
+
+          <th>Quote</th>
+
+          <th>Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let member of team">
+          <td>
+            <img [src]="member.image" [alt]="member.name" />
+          </td>
+
+          <td>
+            {{ member.name }}
+          </td>
+
+          <td>
+            {{ member.position }}
+          </td>
+
+          <td>
+            {{ member.quote }}
+          </td>
+
+          <td>
+            <button class="edit-btn" [routerLink]="['/dashboard/team/edit', member._id]">
+              Edit
+            </button>
+
+            <button *ngIf="isAdmin" class="delete-btn" (click)="openDeleteModal(member._id!)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+
+<div class="modal-overlay" *ngIf="showDeleteModal">
+  <div class="delete-modal">
+    <div class="modal-icon">
+      <i class="fa-solid fa-trash"></i>
+    </div>
+
+    <h3>Delete Team Member?</h3>
+
+    <p>This action cannot be undone.</p>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" (click)="closeDeleteModal()">Cancel</button>
+
+      <button class="confirm-btn" (click)="confirmDelete()">Delete</button>
+    </div>
+  </div>
+</div>

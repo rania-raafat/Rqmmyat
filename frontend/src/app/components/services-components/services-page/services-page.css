@@ -1,0 +1,340 @@
+.services-page {
+  background: #07130d;
+
+  min-height: 100vh;
+
+  position: relative;
+}
+
+/* SWIPER */
+
+.services-slider {
+  width: 100%;
+
+  height: auto !important;
+}
+
+swiper-slide {
+  height: auto !important;
+}
+
+/* HERO */
+
+.service-hero {
+  height: 700px;
+
+  width: 100%;
+
+  background-size: cover;
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: flex-end;
+}
+
+.overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(90deg,
+      rgba(7, 19, 13, 0.95),
+      rgba(7, 19, 13, 0.55),
+      rgba(7, 19, 13, 0.25));
+}
+
+.hero-content {
+  position: relative;
+
+  z-index: 2;
+
+  padding: 0 8% 90px;
+
+  max-width: 900px;
+}
+
+.top-title {
+  color: #00ff66;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  letter-spacing: 4px;
+
+  display: block;
+
+  margin-bottom: 25px;
+}
+
+.hero-content h1 {
+  color: white;
+
+  font-size: 70px;
+
+  font-weight: 900;
+
+  line-height: 1.1;
+
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  color: #d1d5db;
+
+  font-size: 22px;
+
+  line-height: 1.7;
+
+  max-width: 650px;
+}
+
+/* FIXED NUMBER */
+
+.counter-fixed {
+  position: absolute;
+
+  right: 8%;
+
+  top: 620px;
+
+  z-index: 30;
+
+  color: #00ff66;
+
+  font-size: 20px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+
+  border-radius: 20px;
+
+  background: rgba(16, 27, 21, 0.85);
+
+  border: 1px solid #00ff66;
+
+  padding: 5px;
+}
+
+/* BUTTONS */
+
+.hero-buttons {
+  display: flex;
+
+  gap: 15px;
+
+  margin-top: 35px;
+}
+
+.hero-buttons button {
+  width: 55px;
+
+  height: 55px;
+
+  border-radius: 50%;
+
+  background: #101b15;
+
+  border: 1px solid #00ff66;
+
+  color: #00ff66;
+
+  font-size: 24px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.hero-buttons button:hover {
+  background: #00ff66;
+
+  color: #07130d;
+}
+
+.feature-check {
+
+  width: 22px;
+
+  height: 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  margin-right: 10px;
+
+  border-radius: 999px;
+
+  background: rgba(0, 255, 102, .12);
+
+  border: 1px solid rgba(0, 255, 102, .3);
+
+  color: #00ff66;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  vertical-align: middle;
+
+}
+
+/* DETAILS */
+
+.service-details {
+  max-width: 1200px;
+
+  margin: 35px auto 30px;
+
+  padding: 45px;
+
+  background: #101b15;
+
+  border: 1px solid #163523;
+
+  border-radius: 30px;
+}
+
+.service-details p {
+  color: #9ca3af;
+
+  line-height: 1.9;
+}
+
+.service-details h2 {
+  color: white;
+
+  font-size: 34px;
+
+  margin: 40px 0 25px;
+}
+
+/* SUB SERVICES */
+
+.sub-services {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 20px;
+}
+
+.sub-card {
+  background: #07130d;
+
+  border: 1px solid #163523;
+
+  border-radius: 22px;
+
+  padding: 25px;
+
+  min-height: 250px;
+
+  transition: 0.3s;
+}
+
+.sub-card:hover {
+  border-color: #00ff66;
+
+  transform: translateY(-5px);
+}
+
+.sub-card h3 {
+  color: #00ff66;
+}
+
+.sub-card p {
+  font-size: 14px;
+}
+
+.sub-card ul {
+  list-style: none;
+
+  padding: 0;
+}
+
+.sub-card li {
+  color: #d1d5db;
+
+  margin-top: 10px;
+}
+
+.swiper-wrapper {
+  align-items: flex-start;
+}
+
+@media (max-width: 992px) {
+  .service-hero {
+    height: 550px;
+  }
+
+  .hero-content {
+    padding: 0 30px 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 45px;
+  }
+
+  .counter-fixed {
+    top: 500px;
+
+    right: 30px;
+
+    font-size: 22px;
+  }
+
+  .sub-services {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .service-hero {
+    height: 500px;
+
+    background-position: center center;
+  }
+
+  .hero-content {
+    padding: 0 20px 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 35px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .counter-fixed {
+    top: 450px;
+
+    right: 20px;
+
+    font-size: 18px;
+  }
+
+  .sub-services {
+    grid-template-columns: 1fr;
+  }
+
+  .service-details {
+    margin: 20px 15px;
+
+    padding: 25px;
+  }
+}

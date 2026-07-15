@@ -1,0 +1,77 @@
+<section class="services-page">
+  <!-- FIXED COUNTER -->
+
+  <div class="counter-fixed">
+    {{ activeIndex + 1 | number: '2.0' }}
+
+    /
+
+    {{ services.length | number: '2.0' }}
+  </div>
+
+  <swiper-container
+    #swiperRef
+    class="services-slider"
+    slides-per-view="1"
+    speed="900"
+    effect="fade"
+    auto-height="true"
+    fade-effect-cross-fade="true"
+  >
+    <swiper-slide *ngFor="let service of services" [id]="service.slug">
+      <!-- HERO -->
+
+      <div class="service-hero" [style.background-image]="'url(' + service.image + ')'">
+        <div class="overlay"></div>
+
+        <div class="hero-content">
+          <span class="top-title"> OUR SERVICES </span>
+
+          <h1>
+            {{ service.title }}
+          </h1>
+
+          <p>
+            {{ service.shortDescription }}
+          </p>
+
+          <div class="hero-buttons">
+            <button (click)="previousService()">←</button>
+
+            <button (click)="nextService()">→</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- DETAILS -->
+
+      <div class="service-details">
+        <p>
+          {{ service.description }}
+        </p>
+
+        <h2>Explore {{ service.title }}</h2>
+
+        <div class="sub-services">
+          <div class="sub-card" *ngFor="let sub of service.subServices">
+            <h3>
+              {{ sub.title }}
+            </h3>
+
+            <p *ngIf="sub.description">
+              {{ sub.description }}
+            </p>
+
+            <ul>
+              <li *ngFor="let feature of sub.features">
+                <span class="feature-check"> ✓ </span>
+
+                {{ feature }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </swiper-slide>
+  </swiper-container>
+</section>

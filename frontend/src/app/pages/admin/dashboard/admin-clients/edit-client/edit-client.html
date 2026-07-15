@@ -1,0 +1,59 @@
+<div class="edit-client-page">
+  <div class="form-card">
+    <div class="card-header">
+      <h2>Edit Client</h2>
+
+      <p>Update client information and logo</p>
+    </div>
+
+    <form [formGroup]="clientForm">
+      <div class="form-grid">
+        <!-- LOGO -->
+
+        <div class="right-side">
+          <label class="image-label"> Client Logo </label>
+
+          <div class="image-box">
+            <img *ngIf="imagePreview" [src]="imagePreview" />
+
+            <div *ngIf="!imagePreview" class="empty-image">
+              <i class="fa-solid fa-image"></i>
+
+              <span> No Logo Selected </span>
+            </div>
+          </div>
+
+          <label class="upload-btn">
+            Change Logo
+
+            <input hidden type="file" accept="image/*" (change)="onImageSelect($event)" />
+          </label>
+        </div>
+
+        <!-- DETAILS -->
+
+        <div class="left-side">
+          <div class="form-group">
+            <label> Client Name </label>
+
+            <input type="text" formControlName="name" />
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" formControlName="featured" />
+
+            <label> Featured Client </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+
+        <button type="button" class="save-btn" [disabled]="loading" (click)="saveClient()">
+          {{ loading ? 'Updating...' : 'Update Client' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

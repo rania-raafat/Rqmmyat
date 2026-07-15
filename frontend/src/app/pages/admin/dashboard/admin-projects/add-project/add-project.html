@@ -1,0 +1,134 @@
+<div class="add-project-page mt-2">
+
+    <div class="page-header">
+
+        <h2>Add New Project</h2>
+
+        <p>
+            Create and publish a new portfolio project.
+        </p>
+
+    </div>
+
+    <form [formGroup]="projectForm">
+
+        <div class="project-layout">
+
+            <!-- DETAILS -->
+
+            <div class="project-card">
+
+                <h3>Project Details</h3>
+
+                <div class="form-group">
+
+                    <label>Project Title *</label>
+
+                    <input type="text" formControlName="title" placeholder="Project title">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Category *</label>
+
+                    <input type="text" formControlName="category" placeholder="Web App, Mobile App, Dashboard">
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Short Description</label>
+
+                    <textarea rows="5" formControlName="shortDescription" placeholder="Brief project description">
+          </textarea>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Status</label>
+
+                        <select formControlName="status">
+                            <option value="Active">Active</option>
+                            <option value="Completed">Completed</option>
+                            <option value="In Progress">In Progress</option>
+                        </select>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Feature</label>
+
+                        <div class="checkbox-group">
+
+                            <input type="checkbox" id="featured" formControlName="featured">
+
+                            <label for="featured">
+                                Featured Project
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- IMAGE -->
+
+            <div class="project-card image-card">
+
+                <h3>Project Image</h3>
+
+                <div class="image-preview">
+
+                    <img *ngIf="imagePreview" [src]="imagePreview">
+
+                    <div *ngIf="!imagePreview" class="empty-preview">
+
+                        <i class="fa-regular fa-image"></i>
+
+                    </div>
+
+                </div>
+
+                <label class="upload-btn">
+
+                    <input hidden type="file" accept="image/*" (change)="onImageSelect($event)">
+
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                    Upload Image
+
+                </label>
+
+            </div>
+
+        </div>
+
+    </form>
+
+    <div class="actions">
+
+        <button type="button" class="cancel-btn" (click)="cancel()">
+
+            Cancel
+
+        </button>
+
+        <button type="button" class="save-btn" [disabled]="loading" (click)="saveProject()">
+
+            <i class="fa-solid fa-floppy-disk"></i>
+
+            {{ loading ? 'Saving...' : 'Save Project' }}
+
+        </button>
+
+    </div>
+
+</div>

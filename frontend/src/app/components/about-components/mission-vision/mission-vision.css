@@ -1,0 +1,156 @@
+/* Floating Cards */
+
+@keyframes floatDesktop {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatMobile {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* Image Animation */
+
+@keyframes imageFloat {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Glow Animation */
+
+@keyframes pulseGlow {
+    0% {
+        opacity: .3;
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        opacity: .7;
+        transform: translateX(-50%) scale(1.08);
+    }
+
+    100% {
+        opacity: .3;
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Mission Card */
+
+.mission-card {
+    animation: floatDesktop 6s ease-in-out infinite;
+    transition: all .4s ease;
+    will-change: transform;
+}
+
+/* Vision Card */
+
+.vision-card {
+    animation: floatDesktop 6s ease-in-out infinite;
+    animation-delay: 3s;
+    transition: all .4s ease;
+    will-change: transform;
+}
+
+/* Hover */
+
+.mission-card:hover,
+.vision-card:hover {
+    border-color: rgba(0, 255, 102, .35);
+    box-shadow: 0 0 35px rgba(0, 255, 102, .15);
+}
+
+/* Image */
+
+.image-animation {
+    animation: imageFloat 9s ease-in-out infinite;
+    will-change: transform;
+}
+
+/* Glow */
+
+.pulse-glow {
+    position: absolute;
+    left: 50%;
+    bottom: -120px;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 9999px;
+
+    background: rgba(0, 255, 102, .15);
+
+    filter: blur(120px);
+
+    animation: pulseGlow 6s ease-in-out infinite;
+
+    pointer-events: none;
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+
+    .mission-card {
+        animation: floatMobile 5s ease-in-out infinite;
+    }
+
+    .vision-card {
+        animation: floatMobile 5s ease-in-out infinite;
+        animation-delay: 2.5s;
+    }
+
+    .pulse-glow {
+        width: 280px;
+        height: 280px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .mission-card {
+        animation: floatMobile 4s ease-in-out infinite;
+    }
+
+    .vision-card {
+        animation: floatMobile 4s ease-in-out infinite;
+        animation-delay: 2s;
+    }
+
+    .pulse-glow {
+        width: 220px;
+        height: 220px;
+        bottom: -80px;
+    }
+}

@@ -1,0 +1,199 @@
+<div class="add-service-page mt-2">
+
+  <div class="page-header">
+
+    <h2>Add New Service</h2>
+
+    <p>
+      Create and publish a new service.
+    </p>
+
+  </div>
+
+  <form [formGroup]="serviceForm">
+
+    <!-- TOP SECTION -->
+
+    <div class="service-layout">
+
+      <!-- Left Side -->
+
+      <div class="service-card">
+
+        <h3>Service Details</h3>
+
+        <div class="form-group">
+          <label>Title*</label>
+          <input type="text" formControlName="title" placeholder="Example: Web Development">
+        </div>
+
+        <div class="form-group">
+          <label>Short Description</label>
+          <textarea rows="3" formControlName="shortDescription" placeholder="Brief service summary">
+        </textarea>
+        </div>
+
+        <div class="form-group">
+          <label>Description</label>
+          <textarea rows="8" formControlName="description" placeholder="Detailed service description">
+        </textarea>
+        </div>
+
+      </div>
+
+      <!-- Right Side -->
+
+      <div class="service-card image-card">
+
+        <h3>Service Image</h3>
+
+        <div class="image-preview">
+
+          <img *ngIf="imagePreview" [src]="imagePreview">
+
+          <div *ngIf="!imagePreview" class="empty-preview">
+
+            <i class="fa-regular fa-image"></i>
+
+          </div>
+
+        </div>
+
+        <label class="upload-btn">
+
+          <input hidden type="file" accept="image/*" (change)="onImageSelect($event)">
+
+          <i class="fa-solid fa-cloud-arrow-up"></i>
+
+          Upload Image
+
+        </label>
+
+      </div>
+
+    </div>
+
+    <!-- SUB SERVICES -->
+
+    <div class="subservices-card">
+
+      <div class="section-header">
+
+        <div>
+
+          <h3>Sub Services</h3>
+
+          <p>Add service sections and features</p>
+
+        </div>
+
+        <button type="button" class="add-sub-btn" (click)="addSubService()">
+
+          <i class="fa-solid fa-plus"></i>
+
+          Add Sub Service
+
+        </button>
+
+      </div>
+
+      <div formArrayName="subServices">
+
+        <div *ngFor="let sub of subServices.controls; let i = index" [formGroupName]="i" class="sub-card">
+
+          <div class="sub-card-header">
+
+            <div class="sub-title">
+
+              <span class="sub-badge">
+                #{{ i + 1 }}
+              </span>
+
+              <h4>
+                {{ sub.get('title')?.value || 'New Sub Service' }}
+              </h4>
+
+            </div>
+
+            <button type="button" class="delete-sub-btn" (click)="removeSubService(i)">
+
+              <i class="fa-solid fa-trash"></i>
+
+            </button>
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Sub Service Title</label>
+
+            <input type="text" formControlName="title" placeholder="Sub Service Title">
+
+          </div>
+
+          <div class="form-group">
+
+            <label>Description</label>
+
+            <textarea rows="3" formControlName="description" placeholder="Description">
+          </textarea>
+
+          </div>
+
+          <div class="features-section">
+
+            <div class="features-header">
+
+              <label>Features</label>
+
+              <button type="button" class="add-feature-btn" (click)="addFeature(i)">
+
+                + Feature
+
+              </button>
+
+            </div>
+
+            <div formArrayName="features">
+
+              <div *ngFor="let feature of getFeatures(i).controls; let f = index" class="feature-row">
+
+                <input [formControlName]="f" placeholder="Feature">
+
+                <button type="button" class="remove-feature-btn" (click)="removeFeature(i, f)">
+
+                  ✕
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </form>
+
+  <div class="actions">
+
+    <button type="button" class="cancel-btn" (click)="cancel()">
+
+      Cancel
+
+    </button>
+
+    <button type="button" class="save-btn" [disabled]="loading" (click)="saveService()">
+      <i class="fa-solid fa-floppy-disk"></i>
+
+      {{ loading ? 'Saving...' : 'Save Service' }}
+    </button>
+
+  </div>
+
+</div>

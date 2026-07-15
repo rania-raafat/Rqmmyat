@@ -1,0 +1,83 @@
+<div class="edit-project-page">
+  <div class="form-card">
+    <div class="card-header">
+      <h2>Edit Project</h2>
+
+      <p>Update project information and image</p>
+    </div>
+
+    <form [formGroup]="projectForm">
+      <div class="form-grid">
+        <!-- IMAGE -->
+
+        <div class="right-side">
+          <label class="image-label"> Project Image </label>
+
+          <div class="image-box">
+            <img *ngIf="imagePreview" [src]="imagePreview" />
+
+            <div *ngIf="!imagePreview" class="empty-image">
+              <i class="fa-solid fa-image"></i>
+
+              <span> No Image Selected </span>
+            </div>
+          </div>
+
+          <label class="upload-btn">
+            Change Image
+
+            <input hidden type="file" accept="image/*" (change)="onImageSelect($event)" />
+          </label>
+        </div>
+
+        <!-- DETAILS -->
+
+        <div class="left-side">
+          <div class="form-group">
+            <label> Project Title </label>
+
+            <input type="text" formControlName="title" />
+          </div>
+
+          <div class="form-group">
+            <label> Category </label>
+
+            <input type="text" formControlName="category" />
+          </div>
+
+          <div class="form-group">
+            <label> Short Description </label>
+
+            <textarea rows="5" formControlName="shortDescription"> </textarea>
+          </div>
+
+          <div class="form-group">
+            <label> Status </label>
+
+            <select formControlName="status">
+              <option>Completed</option>
+
+              <option>In Progress</option>
+
+              <option>Pending</option>
+            </select>
+          </div>
+
+          <div class="checkbox">
+            <input type="checkbox" formControlName="featured" />
+
+            <label> Featured Project </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+
+        <button type="button" class="save-btn" [disabled]="loading" (click)="saveProject()">
+          {{ loading ? 'Updating...' : 'Update Project' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

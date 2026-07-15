@@ -1,0 +1,63 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <div class="logo-circle">
+      <i class="fa-solid fa-lock"></i>
+    </div>
+
+    <h1>RQMMYAT Dashboard</h1>
+
+    <p>
+      Sign in to access the administration panel
+    </p>
+
+    <form
+      [formGroup]="loginForm"
+      (ngSubmit)="onSubmit()">
+
+      <div class="input-group">
+
+        <label>Email Address</label>
+
+        <input
+          type="email"
+          formControlName="email"
+          placeholder="admin@rqmmyat.com"
+          autocomplete="email">
+
+      </div>
+
+      <div class="input-group">
+
+        <label>Password</label>
+
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="Enter password"
+          autocomplete="current-password">
+
+      </div>
+
+      <div
+        *ngIf="errorMessage"
+        class="error-message">
+
+        {{ errorMessage }}
+
+      </div>
+
+      <button
+        type="submit"
+        class="login-btn">
+
+        Sign In
+
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

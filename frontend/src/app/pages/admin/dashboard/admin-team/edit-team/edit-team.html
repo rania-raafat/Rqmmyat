@@ -1,0 +1,65 @@
+<div class="edit-team-page">
+  <div class="form-card">
+    <div class="card-header">
+      <h2>Edit Team Member</h2>
+
+      <p>Update team member information and image</p>
+    </div>
+
+    <form [formGroup]="teamForm">
+      <div class="form-grid">
+        <!-- IMAGE -->
+
+        <div class="right-side">
+          <label class="image-label"> Team Image </label>
+
+          <div class="image-box">
+            <img *ngIf="imagePreview" [src]="imagePreview" />
+
+            <div *ngIf="!imagePreview" class="empty-image">
+              <i class="fa-solid fa-user"></i>
+
+              <span> No Image Selected </span>
+            </div>
+          </div>
+
+          <label class="upload-btn">
+            Change Image
+
+            <input hidden type="file" accept="image/*" (change)="onImageSelect($event)" />
+          </label>
+        </div>
+
+        <!-- DETAILS -->
+
+        <div class="left-side">
+          <div class="form-group">
+            <label> Name </label>
+
+            <input type="text" formControlName="name" />
+          </div>
+
+          <div class="form-group">
+            <label> Position </label>
+
+            <input type="text" formControlName="position" />
+          </div>
+
+          <div class="form-group">
+            <label> Quote </label>
+
+            <textarea rows="6" formControlName="quote"> </textarea>
+          </div>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="button" class="cancel-btn" (click)="cancel()">Cancel</button>
+
+        <button type="button" class="save-btn" [disabled]="loading" (click)="saveTeam()">
+          {{ loading ? 'Updating...' : 'Update Team Member' }}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

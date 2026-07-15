@@ -1,0 +1,101 @@
+<div class="contacts-page mt-2">
+  <div class="page-header">
+    <h2>Contacts</h2>
+  </div>
+
+  <div *ngIf="loading" class="loading">Loading...</div>
+
+  <div *ngIf="!loading" class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Company</th>
+          <th>Service</th>
+          <th>Message</th>
+          <th>Status</th>
+          <th>Date</th>
+          <th *ngIf="isAdmin">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let contact of contacts">
+          <td>{{ contact.name }}</td>
+
+          <td>{{ contact.email }}</td>
+
+          <td>{{ contact.phone }}</td>
+
+          <td>{{ contact.company }}</td>
+
+          <td>{{ contact.service }}</td>
+
+          <td class="message-cell">
+            <div class="message-preview">
+              {{ contact.message }}
+            </div>
+
+            <button class="view-btn" (click)="openMessage(contact.message)">View Full</button>
+          </td>
+
+          <td>
+            <select
+              class="status-select"
+              [value]="contact.status"
+              (change)="changeStatus(contact, $event)"
+            >
+              <option *ngFor="let status of statuses" [value]="status">
+                {{ status }}
+              </option>
+            </select>
+          </td>
+
+          <td>
+            {{ contact.createdAt | date: 'mediumDate' }}
+          </td>
+
+          <td *ngIf="isAdmin">
+            <button class="delete-btn" (click)="openDeleteModal(contact._id!)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- DELETE MODAL -->
+
+<div class="modal-overlay" *ngIf="showDeleteModal">
+  <div class="delete-modal">
+    <div class="modal-icon">
+      <i class="fa-solid fa-trash"></i>
+    </div>
+
+    <h3>Delete Contact?</h3>
+
+    <p>This action cannot be undone.</p>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" (click)="closeDeleteModal()">Cancel</button>
+
+      <button class="confirm-btn" (click)="confirmDelete()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="showMessageModal">
+  <div class="delete-modal">
+    <h3>Message</h3>
+
+    <p class="full-message">
+      {{ selectedMessage }}
+    </p>
+
+    <div class="modal-actions">
+      <button class="cancel-btn" (click)="closeMessageModal()">Close</button>
+    </div>
+  </div>
+</div>

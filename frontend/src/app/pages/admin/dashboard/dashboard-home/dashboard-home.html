@@ -1,0 +1,97 @@
+<div class="dashboard-home">
+
+  <div class="page-header">
+
+    <h2>Overview</h2>
+
+    <p>
+      Welcome to RQMMYAT Admin Dashboard
+    </p>
+
+  </div>
+
+  <div
+    *ngIf="loading"
+    class="loading">
+
+    Loading...
+
+  </div>
+
+  <div
+    *ngIf="!loading"
+    class="stats-grid">
+
+    <div class="stat-card">
+
+      <div class="icon services">
+        <i class="fa-solid fa-briefcase"></i>
+      </div>
+
+      <h3>Services</h3>
+
+      <span>
+        {{ stats.services }}
+      </span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="icon projects">
+        <i class="fa-solid fa-diagram-project"></i>
+      </div>
+
+      <h3>Projects</h3>
+
+      <span>
+        {{ stats.projects }}
+      </span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="icon clients">
+        <i class="fa-solid fa-building"></i>
+      </div>
+
+      <h3>Clients</h3>
+
+      <span>
+        {{ stats.clients }}
+      </span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="icon contacts">
+        <i class="fa-solid fa-envelope"></i>
+      </div>
+
+      <h3>Messages</h3>
+
+      <span>
+        {{ stats.contacts }}
+      </span>
+
+    </div>
+
+    <div class="stat-card">
+
+      <div class="icon team">
+        <i class="fa-solid fa-users"></i>
+      </div>
+
+      <h3>Team</h3>
+
+      <span>
+        {{ stats.team }}
+      </span>
+
+    </div>
+
+  </div>
+
+</div>

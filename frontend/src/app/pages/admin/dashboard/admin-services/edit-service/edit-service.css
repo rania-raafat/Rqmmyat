@@ -1,0 +1,493 @@
+.edit-service-page{
+  padding:24px;
+}
+
+.form-card{
+  background:#0c1d14;
+  border:1px solid #163523;
+  border-radius:24px;
+  padding:30px;
+}
+
+.card-header{
+  margin-bottom:30px;
+}
+
+.card-header h2{
+  color:#fff;
+  font-size:28px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.card-header p{
+  color:#9ca3af;
+}
+
+.form-grid{
+  display:grid;
+  grid-template-columns:350px 1fr;
+  gap:30px;
+  margin-bottom:30px;
+}
+
+/* IMAGE */
+
+.image-label{
+  display:block;
+  color:#fff;
+  font-weight:600;
+  margin-bottom:12px;
+}
+
+.image-box{
+  height:280px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid #163523;
+  background:#07110b;
+  margin-bottom:15px;
+}
+
+.image-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.empty-image{
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:12px;
+  color:#6b7280;
+}
+
+.empty-image i{
+  font-size:45px;
+}
+
+.upload-btn{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#00ff66;
+  color:#000;
+  padding:12px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+.upload-btn:hover{
+  opacity:.9;
+}
+
+/* FORM */
+
+.form-group{
+  margin-bottom:20px;
+}
+
+.form-group label{
+  display:block;
+  color:#fff;
+  margin-bottom:8px;
+  font-weight:600;
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  background:#07110b;
+  border:1px solid #163523;
+  border-radius:12px;
+  padding:14px;
+  color:#fff;
+  font-size:14px;
+}
+
+.form-group input:focus,
+.form-group textarea:focus{
+  outline:none;
+  border-color:#00ff66;
+  box-shadow:0 0 0 3px rgba(0,255,102,.1);
+}
+
+/* SUB SERVICES */
+
+.subservices-card{
+  background:#0f1f17;
+  border:1px solid #163523;
+  border-radius:22px;
+  padding:25px;
+}
+
+.section-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:25px;
+}
+
+.section-header h3{
+  color:white;
+  font-size:22px;
+  margin-bottom:4px;
+}
+
+.section-header p{
+  color:#9ca3af;
+  font-size:14px;
+}
+
+.add-sub-btn{
+  background:#00ff66;
+  color:black;
+  border:none;
+  padding:12px 18px;
+  border-radius:12px;
+  cursor:pointer;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.add-sub-btn:hover{
+  opacity:.9;
+}
+
+.sub-card{
+  background:#07110b;
+  border:1px solid #163523;
+  border-radius:18px;
+  padding:20px;
+  margin-bottom:18px;
+}
+
+.sub-card:last-child{
+  margin-bottom:0;
+}
+
+.sub-card-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:18px;
+}
+
+.sub-title{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.sub-badge{
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  background:#00ff66;
+  color:black;
+  font-weight:700;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.sub-title h4{
+  color:white;
+  font-size:16px;
+  font-weight:600;
+  margin:0;
+}
+
+.delete-sub-btn{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:12px;
+  background:#dc2626;
+  color:white;
+  cursor:pointer;
+}
+
+.delete-sub-btn:hover{
+  background:#b91c1c;
+}
+
+/* FEATURES */
+
+.features-section{
+  margin-top:10px;
+}
+
+.features-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:15px;
+}
+
+.features-header label{
+  color:white;
+  font-weight:600;
+}
+
+.add-feature-btn{
+  background:#163523;
+  color:white;
+  border:none;
+  padding:8px 14px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.add-feature-btn:hover{
+  background:#1d4d31;
+}
+
+.feature-row{
+  display:flex;
+  gap:10px;
+  margin-bottom:10px;
+}
+
+.feature-row input{
+  flex:1;
+  background:#0c1d14;
+  border:1px solid #163523;
+  border-radius:10px;
+  padding:12px;
+  color:white;
+}
+
+.remove-feature-btn{
+  width:45px;
+  border:none;
+  border-radius:10px;
+  background:#dc2626;
+  color:white;
+  cursor:pointer;
+}
+
+.remove-feature-btn:hover{
+  background:#b91c1c;
+}
+
+/* ACTIONS */
+
+.actions{
+  margin-top:30px;
+  display:flex;
+  justify-content:flex-end;
+  gap:12px;
+}
+
+.cancel-btn{
+  background:#1f2937;
+  color:white;
+  border:none;
+  padding:12px 22px;
+  border-radius:12px;
+  cursor:pointer;
+}
+
+.save-btn{
+  background:#00ff66;
+  color:black;
+  border:none;
+  padding:12px 22px;
+  border-radius:12px;
+  font-weight:700;
+  cursor:pointer;
+}
+
+.save-btn:disabled{
+  opacity:.6;
+}
+
+.save-btn:hover{
+  opacity:.9;
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+  .form-grid{
+    grid-template-columns:1fr;
+  }
+
+  .image-box{
+    max-width:450px;
+  }
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .edit-service-page{
+    padding:12px;
+  }
+
+  .form-card{
+    padding:18px;
+  }
+
+  .section-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .add-sub-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .sub-card-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+
+  .delete-sub-btn{
+    width:100%;
+  }
+
+  .feature-row{
+    flex-direction:column;
+  }
+
+  .remove-feature-btn{
+    width:100%;
+    height:42px;
+  }
+
+  .actions{
+    flex-direction:column-reverse;
+  }
+
+  .save-btn,
+  .cancel-btn{
+    width:100%;
+  }
+}
+
+/* =========================
+   SUB SERVICES RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+  .subservices-card{
+    padding:16px;
+    border-radius:16px;
+  }
+
+  .section-header{
+    flex-direction:column;
+    align-items:stretch;
+    gap:12px;
+  }
+
+  .section-header h3{
+    font-size:18px;
+  }
+
+  .section-header p{
+    font-size:13px;
+  }
+
+  .add-sub-btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .sub-card{
+    padding:14px;
+    border-radius:14px;
+  }
+
+  .sub-card-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:10px;
+  }
+
+  .sub-title{
+    width:100%;
+  }
+
+  .sub-title h4{
+    font-size:14px;
+    word-break:break-word;
+  }
+
+  .delete-sub-btn{
+    width:100%;
+    height:40px;
+  }
+
+  .sub-card input,
+  .sub-card textarea{
+    font-size:14px;
+    padding:12px;
+  }
+
+  .features-header{
+    flex-direction:column;
+    align-items:stretch;
+    gap:10px;
+  }
+
+  .add-feature-btn{
+    width:100%;
+  }
+
+  .feature-row{
+  background:#0c1d14;
+  border:1px solid #163523;
+  border-radius:10px;
+  padding:8px;
+}
+
+  .feature-row input{
+    width:100%;
+  }
+
+  .remove-feature-btn{
+    width:100%;
+    height:40px;
+  }
+
+}
+
+/* Very Small Phones */
+
+@media (max-width: 480px){
+
+  .subservices-card{
+    padding:12px;
+  }
+
+  .sub-card{
+    padding:12px;
+  }
+
+  .sub-badge{
+    width:28px;
+    height:28px;
+    font-size:12px;
+  }
+
+  .sub-title h4{
+    font-size:13px;
+  }
+
+}
