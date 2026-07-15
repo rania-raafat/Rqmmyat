@@ -6,7 +6,7 @@ import { Services } from "../../components/home-components/services/services";
 import { WhyChooseUs } from '../../components/home-components/why-choose-us/why-choose-us';
 import { Projects } from '../../components/home-components/projects/projects';
 import { TeamComponent } from '../../shared/team/team';
-import { TestimonialsComponent } from '../../shared/testimonials/testimonials';
+import { TestimonialsComponent } from '../../components/home-components/testimonials/testimonials';
 import { Clients} from '../../shared/clients/clients';
 import { CtaComponent } from '../../shared/cta/cta'
 import { Footer } from "../../shared/footer/footer";
