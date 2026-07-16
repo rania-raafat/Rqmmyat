@@ -5,7 +5,7 @@ import { About } from './pages/about/about';
 import { Services } from './pages/services/services';
 import { Projects } from './pages/projects/projects';
 import { Contact } from './pages/contact/contact';
-
+import { NotFound } from './pages/not-found/not-found';
 import { Login } from './pages/admin/login/login';
 import { Dashboard } from './pages/admin/dashboard/dashboard';
 import { authGuard } from './guards/auth-guard';
@@ -106,4 +106,6 @@ export const routes: Routes = [
       },
     ],
   },
+
+  { path: '**', component: NotFound }
 ];
