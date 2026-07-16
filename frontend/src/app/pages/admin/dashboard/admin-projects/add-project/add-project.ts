@@ -37,7 +37,7 @@ export class AddProject {
 
       shortDescription: [''],
 
-      status: ['Active'],
+      status: ['Completed'],
 
       featured: [false],
     });
