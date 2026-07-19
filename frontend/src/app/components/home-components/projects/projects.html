@@ -54,13 +54,12 @@
       <swiper-slide *ngFor="let project of projects">
 
         <div
-          class="group
+          class="project-card group
                  bg-[#101b15]
                  border border-[#163523]
                  rounded-3xl
                  overflow-hidden
                  h-full
-                 hover:border-[#00ff66]
                  transition-all duration-500">
 
           <!-- Image -->
@@ -70,7 +69,6 @@
               [src]="project.image"
               [alt]="project.title"
               class="w-full h-64 object-cover
-                     group-hover:scale-105
                      transition-transform duration-700">
 
             <span

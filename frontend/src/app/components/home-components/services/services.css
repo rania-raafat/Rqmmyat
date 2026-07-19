@@ -10,6 +10,14 @@ swiper-slide {
   border-color: #00ff66;
 }
 
+.service-card:hover img{
+  scale: 1.05;
+}
+
+.service-card a{
+  width: fit-content;
+}
+
 .custom-prev,
 .custom-next {
   width: 42px;

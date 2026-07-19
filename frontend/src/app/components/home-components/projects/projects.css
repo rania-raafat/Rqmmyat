@@ -1,5 +1,9 @@
 .project-card:hover {
-  transform: translateY(-8px);
+    border-color: #00ff66;
+}
+
+.project-card:hover img{
+  scale: 1.05;
 }
 
 img {
