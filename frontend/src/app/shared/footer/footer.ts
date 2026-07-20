@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 import { Service } from '../../models/service';
 import { ServicesService } from '../../services/services/services';
@@ -9,7 +9,7 @@ import { ServicesService } from '../../services/services/services';
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './footer.html',
   styleUrls: ['./footer.css']
 })

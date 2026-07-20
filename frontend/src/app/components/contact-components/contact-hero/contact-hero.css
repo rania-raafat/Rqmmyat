@@ -1,83 +1,203 @@
 .contact-hero {
-    min-height: 45vh;
+  position: relative;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  min-height: 75vh;
 
-    text-align: center;
+  overflow: hidden;
+}
 
-    padding: 120px 20px 80px;
+.hero-map {
+  position: absolute;
+  inset: 0;
 
-    background:
-        linear-gradient(rgba(7, 17, 11, .88),
-            rgba(7, 17, 11, .92)),
-        url('../../../../../public/images/contact-hero.jpeg') center/cover;
+  width: 100%;
+  height: 100%;
+
+  border: none;
+
+  filter: grayscale(0.25) brightness(0.7);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+
+  min-height: 75vh;
+
+  background: linear-gradient(rgba(7, 17, 11, 0.616), rgba(7, 17, 11, 0.92));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 130px 24px 90px;
 }
 
 .hero-content {
-    max-width: 800px;
+  width: 100%;
+  max-width: 1100px;
+
+  text-align: center;
 }
 
 .hero-badge {
-    display: inline-block;
+  display: inline-block;
 
-    background: rgba(0, 255, 102, .12);
+  background: rgba(0, 255, 102, 0.12);
 
-    color: #00ff66;
+  color: #00ff66;
 
-    padding: 10px 18px;
+  padding: 10px 18px;
 
-    border-radius: 999px;
+  border-radius: 999px;
 
-    font-size: 14px;
+  font-size: 14px;
+  font-weight: 600;
 
-    font-weight: 600;
-
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .hero-content h1 {
-    color: white;
+  color: white;
 
-    font-size: 56px;
+  font-size: 60px;
+  font-weight: 800;
 
-    font-weight: 800;
+  line-height: 1.15;
 
-    line-height: 1.15;
-
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .hero-content h1 span {
-    color: #00ff66;
+  color: #00ff66;
 }
 
 .hero-content p {
-    color: #d1d5db;
+  color: #d1d5db;
 
-    font-size: 18px;
+  font-size: 18px;
+  line-height: 1.8;
 
-    line-height: 1.8;
+  max-width: 700px;
 
-    max-width: 650px;
-
-    margin: auto;
+  margin: 0 auto 40px;
 }
 
+/* CONTACT INFO */
+
+.hero-contact-info {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 18px;
+
+  max-width: 900px;
+
+  margin: auto;
+}
+
+.info-card {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  background: rgba(15, 31, 23, 0.88);
+
+  border: 1px solid #163523;
+
+  border-radius: 16px;
+
+  padding: 18px 20px;
+
+  backdrop-filter: blur(12px);
+
+  text-align: left;
+
+  transition: 0.3s;
+}
+
+.info-card:hover {
+  border-color: #00ff66;
+
+  transform: translateY(-3px);
+}
+
+.info-card i {
+  color: #00ff66;
+
+  font-size: 18px;
+
+  flex-shrink: 0;
+}
+
+.info-card span {
+  color: white;
+
+  font-size: 14px;
+
+  line-height: 1.7;
+}
+
+.divider {
+  z-index: 99999999999999999;
+}
+
+/* TABLET */
+
+@media (max-width: 992px) {
+  .hero-overlay {
+    padding: 140px 20px 70px;
+  }
+
+  .hero-content h1 {
+    font-size: 46px;
+  }
+}
+
+/* MOBILE */
+
 @media (max-width: 768px) {
+  .contact-hero {
+    min-height: auto;
+  }
 
-    .contact-hero {
-        min-height: 35vh;
-        padding: 100px 15px 60px;
-    }
+  .hero-overlay {
+    min-height: auto;
 
-    .hero-content h1 {
-        font-size: 36px;
-    }
+    padding: 120px 16px 60px;
+  }
 
-    .hero-content p {
-        font-size: 15px;
-    }
+  .hero-content h1 {
+    font-size: 34px;
+  }
 
+  .hero-content p {
+    font-size: 15px;
+  }
+
+  .hero-contact-info {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card {
+    padding: 16px;
+  }
+}
+
+/* SMALL PHONES */
+
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-badge {
+    font-size: 12px;
+  }
+
+  .hero-overlay {
+    padding: 110px 14px 50px;
+  }
 }

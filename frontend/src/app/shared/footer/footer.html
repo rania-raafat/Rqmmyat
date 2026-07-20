@@ -3,10 +3,22 @@
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
       <!-- Company Info -->
       <div>
-        <a routerLink="/" class="flex items-center gap-3 mb-6 w-fit">
+        <a routerLink="/" class="flex items-center gap-3 mb-3 w-fit">
           <img src="images/logo.png" alt="RQMMYAT" class="w-12 h-12 sm:w-14 sm:h-14" />
 
           <h2 class="text-2xl sm:text-3xl font-bold text-white">RQMMYAT</h2>
+        </a>
+
+        <a
+          href="https://www.google.com/maps/place/107+El+Tayaran+St,+El-Tawfik,+Nasr+City,+Cairo+Governorate+4451015/@30.0706336,31.3212644,17z/data=!3m1!4b1!4m6!3m5!1s0x14583e4717470c2b:0xe685587dbb70db75!8m2!3d30.070629!4d31.3238393!16s%2Fg%2F11c295kb9j?entry=tts&g_ep=EgoyMDI0MDcyMS4wKgBIAVAD"
+          target="_blank"
+          class="flex items-start gap-2 text-gray-400 hover:text-[#00ff66] transition duration-300 mb-8 max-w-lg"
+        >
+          <i class="fa-solid fa-location-dot mt-1 text-[#00ff66]"></i>
+
+          <span class="underline underline-offset-4">
+            40 Dr. Naguib Mahfouz, District 8, Nasr City, Cairo, Egypt
+          </span>
         </a>
 
         <p class="text-gray-400 leading-7 max-w-lg">
@@ -50,29 +62,52 @@
 
           <ul class="space-y-3 text-gray-400">
             <li>
-              <a routerLink="/" class="hover:text-[#00ff66] transition duration-300"> Home </a>
+              <a
+                routerLink="/"
+                routerLinkActive="active-link"
+                [routerLinkActiveOptions]="{ exact: true }"
+                class="hover:text-[#00ff66] transition duration-300"
+              >
+                Home
+              </a>
             </li>
 
             <li>
-              <a routerLink="/about" class="hover:text-[#00ff66] transition duration-300">
+              <a
+                routerLink="/about"
+                routerLinkActive="active-link"
+                class="hover:text-[#00ff66] transition duration-300"
+              >
                 About
               </a>
             </li>
 
             <li>
-              <a routerLink="/services" class="hover:text-[#00ff66] transition duration-300">
+              <a
+                routerLink="/services"
+                routerLinkActive="active-link"
+                class="hover:text-[#00ff66] transition duration-300"
+              >
                 Services
               </a>
             </li>
 
             <li>
-              <a routerLink="/projects" class="hover:text-[#00ff66] transition duration-300">
+              <a
+                routerLink="/projects"
+                routerLinkActive="active-link"
+                class="hover:text-[#00ff66] transition duration-300"
+              >
                 Projects
               </a>
             </li>
 
             <li>
-              <a routerLink="/contact" class="hover:text-[#00ff66] transition duration-300">
+              <a
+                routerLink="/contact"
+                routerLinkActive="active-link"
+                class="hover:text-[#00ff66] transition duration-300"
+              >
                 Contact
               </a>
             </li>
