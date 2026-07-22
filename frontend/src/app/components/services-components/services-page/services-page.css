@@ -138,7 +138,7 @@ swiper-slide {
 }
 
 .hero-buttons button {
-  padding: 5px 12px;
+  padding: 10px 12px;
 
   border-radius: 50%;
 
@@ -147,9 +147,6 @@ swiper-slide {
   border: 1px solid #00ff66;
 
   color: #00ff66;
-
-  font-size: 24px;
-
   cursor: pointer;
 
   transition: 0.3s;

@@ -1,8 +1,8 @@
 .project-card:hover {
-    border-color: #00ff66;
+  border-color: #00ff66;
 }
 
-.project-card:hover img{
+.project-card:hover img {
   scale: 1.05;
 }
 
@@ -30,7 +30,7 @@ swiper-slide {
   background: #101b15;
   color: #00ff66;
   cursor: pointer;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 .custom-prev:hover,

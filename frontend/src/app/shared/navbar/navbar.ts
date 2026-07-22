@@ -1,8 +1,4 @@
-import {
-  Component,
-  OnInit,
-  ChangeDetectorRef
-} from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
@@ -17,7 +13,6 @@ import { ServicesService } from '../../services/services/services';
   styleUrl: './navbar.css',
 })
 export class Navbar implements OnInit {
-
   isMobileMenuOpen = false;
   showServices = false;
 
@@ -25,7 +20,7 @@ export class Navbar implements OnInit {
 
   constructor(
     private servicesService: ServicesService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
   ) {}
 
   ngOnInit(): void {
@@ -35,18 +30,16 @@ export class Navbar implements OnInit {
   getServices(): void {
     this.servicesService.getServices().subscribe({
       next: (data) => {
-
         this.services = data;
 
         console.log('Navbar Services:', this.services);
 
         // Force UI update
         this.cdr.detectChanges();
-
       },
       error: (err) => {
         console.error(err);
-      }
+      },
     });
   }
 
@@ -58,5 +51,4 @@ export class Navbar implements OnInit {
     this.isMobileMenuOpen = false;
     this.showServices = false;
   }
-
 }

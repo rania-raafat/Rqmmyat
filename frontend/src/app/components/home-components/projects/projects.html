@@ -1,32 +1,19 @@
 <section class="py-24 bg-[#07130d]">
-
   <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
-
     <!-- Section Header -->
     <div class="text-center mb-16">
-
-      <span
-        class="text-[#00ff66] uppercase tracking-widest text-sm font-semibold">
-
+      <span class="text-[#00ff66] uppercase tracking-widest text-sm font-semibold">
         Our Projects
-
       </span>
 
-      <h2
-        class="text-white text-4xl md:text-5xl font-bold mt-4">
-
+      <h2 class="text-white text-4xl md:text-5xl font-bold mt-4">
         Successful Projects We've Delivered
-
       </h2>
 
-      <p
-        class="text-gray-400 max-w-3xl mx-auto mt-6">
-
-        Explore some of our successful solutions in RFID systems,
-        software development, automation, and digital transformation.
-
+      <p class="text-gray-400 max-w-3xl mx-auto mt-6">
+        Explore some of our successful solutions in RFID systems, software development, automation,
+        and digital transformation.
       </p>
-
     </div>
 
     <!-- Swiper -->
@@ -49,139 +36,76 @@
         "1024": {
           "slidesPerView": 3
         }
-      }'>
-
+      }'
+    >
       <swiper-slide *ngFor="let project of projects">
-
         <div
-          class="project-card group
-                 bg-[#101b15]
-                 border border-[#163523]
-                 rounded-3xl
-                 overflow-hidden
-                 h-full
-                 transition-all duration-500">
-
+          class="project-card group bg-[#101b15] border border-[#163523] rounded-3xl overflow-hidden h-full transition-all duration-500"
+        >
           <!-- Image -->
           <div class="overflow-hidden relative">
-
             <img
               [src]="project.image"
               [alt]="project.title"
-              class="w-full h-64 object-cover
-                     transition-transform duration-700">
+              class="w-full h-64 object-cover transition-transform duration-700"
+            />
 
             <span
-              class="absolute top-4 left-4
-                     bg-[#00cc52]
-                     text-white
-                     text-xs
-                     font-semibold
-                     px-3 py-1
-                     rounded-full">
-
+              class="absolute top-4 left-4 bg-[#00cc52] text-white text-xs font-semibold px-3 py-1 rounded-full"
+            >
               {{ project.category }}
-
             </span>
-
           </div>
 
           <!-- Content -->
           <div class="p-6">
-
             <div class="flex justify-between items-center mb-4 gap-4">
-
-              <h3
-                class="text-white text-xl font-semibold">
-
+              <h3 class="text-white text-xl font-semibold">
                 {{ project.title }}
-
               </h3>
 
-              <span
-                class="text-[#00ff66]
-                       text-sm
-                       font-medium">
-
+              <span class="text-[#00ff66] text-sm font-medium">
                 {{ project.status }}
-
               </span>
-
             </div>
 
-            <p
-              class="text-gray-400">
-
+            <p class="text-gray-400">
               {{ project.shortDescription }}
-
             </p>
-
           </div>
-
         </div>
-
       </swiper-slide>
-
     </swiper-container>
 
     <!-- Custom Arrows -->
     <div class="flex justify-center gap-4 mt-10">
-
-      <button
-        class="custom-prev"
-        (click)="prevSlide()">
-
-        ←
-
+      <button class="custom-prev" (click)="prevSlide()">
+        <i class="fa-solid fa-arrow-left"></i>
       </button>
 
-      <button
-        class="custom-next"
-        (click)="nextSlide()">
-
-        →
-
+      <button class="custom-next" (click)="nextSlide()">
+        <i class="fa-solid fa-arrow-right"></i>
       </button>
-
     </div>
 
     <!-- View All -->
     <div class="flex justify-center mt-14">
-
       <a
         routerLink="/projects"
-        class="px-8 py-4
-               rounded-full
-               bg-[#00cc52]
-               text-white
-               font-semibold
-               hover:bg-[#00e65c]
-               hover:scale-105
-               transition-all duration-300">
-
+        class="px-8 py-4 rounded-full bg-[#00cc52] text-white font-semibold hover:bg-[#00e65c] hover:scale-105 transition-all duration-300"
+      >
         View All Projects
-
       </a>
-
     </div>
-
   </div>
-
 </section>
 
 <div class="mx-auto">
-
   <div class="relative">
-
     <div class="h-px bg-[#163523]"></div>
 
     <div
-      class="absolute left-1/2 -translate-x-1/2 -top-1
-             w-3 h-3 rounded-full
-             bg-[#00ff66]
-             shadow-[0_0_15px_#00ff66]">
-    </div>
-
+      class="absolute left-1/2 -translate-x-1/2 -top-1 w-3 h-3 rounded-full bg-[#00ff66] shadow-[0_0_15px_#00ff66]"
+    ></div>
   </div>
-
 </div>
