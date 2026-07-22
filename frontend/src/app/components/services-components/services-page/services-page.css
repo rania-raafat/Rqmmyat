@@ -45,10 +45,12 @@ swiper-slide {
 
   inset: 0;
 
-  background: linear-gradient(90deg,
-      rgba(7, 19, 13, 0.95),
-      rgba(7, 19, 13, 0.55),
-      rgba(7, 19, 13, 0.25));
+  background: linear-gradient(
+    90deg,
+    rgba(7, 19, 13, 0.95),
+    rgba(7, 19, 13, 0.55),
+    rgba(7, 19, 13, 0.25)
+  );
 }
 
 .hero-content {
@@ -136,9 +138,7 @@ swiper-slide {
 }
 
 .hero-buttons button {
-  width: 55px;
-
-  height: 55px;
+  padding: 5px 12px;
 
   border-radius: 50%;
 
@@ -162,7 +162,6 @@ swiper-slide {
 }
 
 .feature-check {
-
   width: 22px;
 
   height: 22px;
@@ -177,9 +176,9 @@ swiper-slide {
 
   border-radius: 999px;
 
-  background: rgba(0, 255, 102, .12);
+  background: rgba(0, 255, 102, 0.12);
 
-  border: 1px solid rgba(0, 255, 102, .3);
+  border: 1px solid rgba(0, 255, 102, 0.3);
 
   color: #00ff66;
 
@@ -188,7 +187,6 @@ swiper-slide {
   font-weight: 700;
 
   vertical-align: middle;
-
 }
 
 /* DETAILS */
