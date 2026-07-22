@@ -8,24 +8,18 @@ import { AdminNavbar } from '../../../shared/admin-navbar/admin-navbar';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [
-    CommonModule,
-    RouterOutlet,
-    AdminSidebar,
-    AdminNavbar
-  ],
+  imports: [CommonModule, RouterOutlet, AdminSidebar, AdminNavbar],
   templateUrl: './dashboard.html',
-  styleUrl: './dashboard.css'
+  styleUrl: './dashboard.css',
 })
 export class Dashboard {
-
   sidebarOpen = false;
 
-  toggleSidebar() {
-
-    this.sidebarOpen =
-      !this.sidebarOpen;
-
+  toggleSidebar(): void {
+    this.sidebarOpen = !this.sidebarOpen;
   }
 
+  closeSidebar(): void {
+    this.sidebarOpen = false;
+  }
 }

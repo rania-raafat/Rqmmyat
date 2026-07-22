@@ -1,24 +1,12 @@
-<div
-  class="overlay"
-  *ngIf="sidebarOpen"
-  (click)="toggleSidebar()">
-</div>
+<div class="overlay" *ngIf="sidebarOpen" (click)="toggleSidebar()"></div>
 
 <div class="dashboard-container">
-
-  <app-admin-sidebar
-    [sidebarOpen]="sidebarOpen"
-    (closeSidebar)="toggleSidebar()">
+  <app-admin-sidebar [sidebarOpen]="sidebarOpen" (closeSidebar)="closeSidebar()">
   </app-admin-sidebar>
 
   <div class="content">
-
-    <app-admin-navbar
-      (toggleSidebar)="toggleSidebar()">
-    </app-admin-navbar>
+    <app-admin-navbar (toggleSidebar)="toggleSidebar()"> </app-admin-navbar>
 
     <router-outlet></router-outlet>
-
   </div>
-
 </div>
